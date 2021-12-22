@@ -1,0 +1,22 @@
+# Bounty GraphQL schema
+
+type Bounty {
+    id: ID!
+    text: String!
+    done: Boolean!
+    userId: Int!
+    user: User
+}
+
+type Query {
+    bounties: BountyResponse!
+}
+
+input NewBounty {
+    text: String!
+    userId: Int!
+}
+
+type Mutation {
+    createBounty(input: NewBounty!): BountyResponse!
+}

@@ -1,0 +1,21 @@
+# User GraphQL Schema
+
+type User {
+    id: ID!
+    username: String!
+    discordId: String
+}
+
+input NewUser {
+    username: String!
+    discordId: String
+}
+
+extend type Query {
+    user(id: Int!): UserResponse!
+    users: UserResponse!
+}
+
+extend type Mutation {
+    createUser(input: NewUser!): DefaultResponse!
+}

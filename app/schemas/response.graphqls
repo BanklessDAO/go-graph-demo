@@ -1,0 +1,19 @@
+# Response GraphQL schema
+
+type DefaultResponse {
+    message: String!
+    status: Int!
+    data: String
+}
+
+type BountyResponse {
+    message: String!
+    status: Int!
+    data: [Bounty]
+}
+
+type UserResponse {
+    message: String!
+    status: Int!
+    data: [User]
+}
